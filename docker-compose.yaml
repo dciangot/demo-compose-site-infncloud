@@ -29,7 +29,8 @@ services:
   grav:
     container_name: grav
     image: bozzochet/docker-grav:herd
-    expose: 80
+    expose:
+    - 80
     networks:
       - net
     labels:
