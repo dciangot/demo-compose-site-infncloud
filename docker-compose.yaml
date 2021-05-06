@@ -37,7 +37,8 @@ services:
   grav:
     container_name: grav
     image: bozzochet/docker-grav:latest
-    expose: 8080
+    expose:
+    - 8080
     networks:
       - net
     labels:
