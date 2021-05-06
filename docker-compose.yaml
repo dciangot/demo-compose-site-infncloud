@@ -29,7 +29,7 @@ services:
   grav:
     container_name: grav
     image: bozzochet/docker-grav:herd
-    expose: 8080
+    expose: 80
     networks:
       - net
     labels:
@@ -41,4 +41,4 @@ services:
       - "traefik.http.routers.grav.rule=Host(`${DNS_NAME}`)"
       - "traefik.http.routers.grav.entrypoints=websecure"
       - "traefik.http.routers.grav.tls=true"
-      - "traefik.http.services.grav.loadbalancer.server.port=8080"
+      - "traefik.http.services.grav.loadbalancer.server.port=80"
