@@ -39,7 +39,7 @@ services:
       - "traefik.http.routers.grav-nossl.middlewares=minio-redirect-ssl"
       - "traefik.http.routers.grav-nossl.rule=Host(`${DNS_NAME}`)"
       - "traefik.http.routers.grav-nossl.entrypoints=web"
-      - "traefik.http.routers.grav.rule=Host(`${DNS_NAME}`)"
+      - "traefik.http.routers.grav.rule=HostRegexp(`{subdomain:[a-z]+}.myip.cloud.infn.it`)"
       - "traefik.http.routers.grav.entrypoints=websecure"
       - "traefik.http.routers.grav.tls=true"
       - "traefik.http.services.grav.loadbalancer.server.port=80"
